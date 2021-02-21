@@ -1,11 +1,11 @@
-package be.intecbrussel.demo2.view;
+package be.intecbrussel.demo3.view;
 
-import be.intecbrussel.demo2.data.DogDAO;
-import be.intecbrussel.demo2.data.UserDAO;
-import be.intecbrussel.demo2.model.Dog;
-import be.intecbrussel.demo2.model.DogShelter;
-import be.intecbrussel.demo2.model.User;
-import be.intecbrussel.demo2.utils.UserValidator;
+import be.intecbrussel.demo3.data.DogDAO;
+import be.intecbrussel.demo3.data.UserDAO;
+import be.intecbrussel.demo3.model.Dog;
+import be.intecbrussel.demo3.model.DogShelter;
+import be.intecbrussel.demo3.model.User;
+import be.intecbrussel.demo3.utils.UserValidator;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -92,7 +92,7 @@ public class CuiView {
                 throwables.printStackTrace();
             }
         } else if (dogChoice == 2) {
-            dog = dogDao.getDog(user);
+            dog = dogDao.getDogsByUser(user);
         } else {
             System.out.println("Invalid");
         }

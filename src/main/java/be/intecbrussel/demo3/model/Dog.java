@@ -1,6 +1,7 @@
-package be.intecbrussel.demo2.model;
+package be.intecbrussel.demo3.model;
 
 public class Dog {
+    private int id;
     private String name;
     private int ownerId;
 
@@ -18,7 +19,15 @@ public class Dog {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void pet(){
-        System.out.println(name + " is pet, " + name +" is happy.");
+        System.out.println("Doggo is pet, doggo is happy.");
     }
 }

@@ -1,6 +1,6 @@
-package be.intecbrussel.demo2.data;
+package be.intecbrussel.demo3.data;
 
-import be.intecbrussel.demo2.model.User;
+import be.intecbrussel.demo3.model.User;
 
 import java.sql.*;
 
@@ -10,16 +10,19 @@ public class UserDAO {
     private String password;
 
     public void saveUser(User user) throws SQLException {
-        String query = "INSERT INTO user (username, password) VALUES (?,?)";
+        String query = "INSERT INTO user (id, username, password) VALUES (?,?,?)";
        // User user = null;
 
-        try (Connection connection = DriverManager.getConnection(url, this.user, this.password);
+        try (Connection connection = DriverManager.getConnection(url, this.user, password);
              PreparedStatement statement = connection.prepareStatement(query)) {
 
-            statement.setString(1, user.getUsername());
-            statement.setString(2, user.getPassword());
+            statement.setInt(1, 0);
+            statement.setString(2, user.getUsername());
+            statement.setString(3, user.getPassword());
+
 
             statement.executeUpdate();
+
 
            // user = new User(usernameFromDB, password);
 
@@ -41,12 +44,11 @@ public class UserDAO {
             String password = rs.getString("password");
 
             user = new User(usernameFromDB, password);
+
         }
 
         return user;
     }
-
-
 
     public void setConfig(String user, String password) {
         this.user = user;

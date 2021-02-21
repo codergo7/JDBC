@@ -1,7 +1,8 @@
-package be.intecbrussel.demo2.model;
+package be.intecbrussel.demo3.model;
 
 public class User {
     // UNIQUE ID !!!
+    private int id;
     private String username;
     private String password;
     private Dog doggo;
@@ -25,6 +26,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Dog getDoggo() {
